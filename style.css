@@ -13,10 +13,30 @@ body {
   background-color: black;
 }
 
-.logo {
+.container {
+  position: relative;
+  background-image: url("map.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo > :nth-child(2) {
   position: absolute;
-  top: 10px;
-  left: 60px;
+  top: 5px;
+  right: 10px;
   font-size: 2rem;
   background: -webkit-linear-gradient(-90deg, #e8dda3, #cea172);
   background-clip: text;
@@ -25,32 +45,79 @@ body {
   font-family: "Blanka";
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
+.navbar .logo img {
+  position: absolute;
+  top: 5px;
+  right: 135px;
+  width: 50px;
 }
 
-#logo-ml {
-  width: 50px;
-  height: 50px;
+#toggleNav {
+  font-size: 2.3rem;
+  background: -webkit-linear-gradient(-90deg, #e8dda3, #cea172);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.navbar-nav {
   position: absolute;
-  top: 10px;
-  left: 5px;
-  z-index: 1000;
+  top: 0;
+  left: -100%;
+  height: 310px;
+  width: 220px;
+  padding: 50px 10px;
+  background-color: white;
+  opacity: 0.5;
+  border-bottom-right-radius: 50px;
+  z-index: -1;
+}
+
+.navbar-nav ul {
+  padding: 15px 20px;
+  color: red;
+}
+
+.navbar-nav li {
+  line-height: 1.2;
+}
+
+.navbar-nav li span {
+  color: black;
+}
+
+.navbar-nav.active {
+  transition: all 0.3s linear;
+  left: 0;
 }
 
 .main-section {
   position: relative;
   width: 100%;
+  height: 100vh;
 }
 
-.main-section img {
-  width: 100%;
-  height: 100vh;
-  z-index: -100;
+.circle-container-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 65px;
+  height: 370px;
+  border-top-right-radius: 50px;
+  background-color: #eaeaea38;
+  box-shadow: inset -3px 0 20px black;
+}
+
+.circle-container-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 65px;
+  height: 370px;
+  border-top-left-radius: 50px;
+  background-color: #eaeaea38;
+  box-shadow: inset 3px 0 20px black;
 }
 
 .circle {
@@ -58,7 +125,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  transition: transform .3s ease-in;
+  transition: transform 0.3s ease-in;
   cursor: grab;
 }
 
